@@ -9,7 +9,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import per.liuqh.springboot.client.service.CityDubboConsumerService;
 
-
 @SpringBootApplication
 public class Boot {
 	Logger log=LoggerFactory.getLogger(Boot.class);

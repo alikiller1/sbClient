@@ -1,6 +1,6 @@
-package per.liuqh.testsb.service.dubbo;
+package per.liuqh.service.dubbo;
 
-import per.liuqh.testsb.entity.City;
+import per.liuqh.dubbo.entity.City;
 
 
 public interface CityDubboService {

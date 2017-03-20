@@ -1,4 +1,4 @@
-package per.liuqh.testsb.entity;
+package per.liuqh.dubbo.entity;
 
 import java.io.Serializable;
 

@@ -24,7 +24,7 @@ public class DemoConsumerService {
 		u.setName("ddd");
 		userDao.save(u);
 		try{
-		demoService.test3();
+		demoService.doTest();
 		}catch(Exception e){
 			e.printStackTrace();
 		}

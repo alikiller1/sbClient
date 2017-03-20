@@ -11,5 +11,7 @@ public interface DemoService {
     public List<User> getUsers();  
     
     public void test3()throws Exception;
+    
+    public void doTest()throws Exception;
   
 }  

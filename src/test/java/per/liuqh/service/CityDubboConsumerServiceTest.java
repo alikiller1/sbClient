@@ -1,4 +1,4 @@
-package per.liuqh.service;
+/*package per.liuqh.service;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,3 +16,4 @@ public class CityDubboConsumerServiceTest extends TestCase {
 	}
 
 }
+*/

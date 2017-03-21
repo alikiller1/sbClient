@@ -19,13 +19,14 @@ public class DemoConsumerService {
 	private UserDao userDao;
 
 	@Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
-	public void test1(){
+	public void test1() throws Exception{
 		User u=new User();
 		u.setName("ddd");
 		userDao.save(u);
 		try{
 		demoService.doTest();
 		}catch(Exception e){
+			System.out.println("-------------------->ddsdafdaslfjdsa;lfjdsa;l");
 			e.printStackTrace();
 		}
 	}

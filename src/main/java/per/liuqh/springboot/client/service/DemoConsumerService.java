@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-
-import per.liuqh.service.dubbo.DemoService;
+import per.liuqh.serviceapi.service.DemoService;
 import per.liuqh.springboot.client.dao.UserDao;
 import per.liuqh.springboot.client.entity.User;
+
+import com.alibaba.dubbo.config.annotation.Reference;
 
 @Service
 public class DemoConsumerService {

@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Arrays;
+
 /**
  * Java实现KMP算法
  * 
@@ -13,11 +15,15 @@ package test;
  */
 public class KMPTest {
 	public static void main(String[] args) {
-		String s = "abbabbbbcab"; // 主串
-		String t = "bbcab"; // 模式串
+		String s = "a1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8aaa1a3a2a4a5a6a7a8a9"; // 主串
+		String t = "a1a3a2a4a5a6a7a8a9"; // 模式串
+		System.out.println("s.length="+s.length());
+		System.out.println("t.length="+t.length());
 		char[] ss = s.toCharArray();
 		char[] tt = t.toCharArray();
 		System.out.println(KMP_Index(ss, tt)); // KMP匹配字符串
+		
+		f(ss,tt);
 	}
 
 	/**
@@ -58,10 +64,13 @@ public class KMPTest {
 	 * @return 若匹配成功，返回下标，否则返回-1
 	 */
 	public static int KMP_Index(char[] s, char[] t) {
+		int count=0;
 		int[] next = next(t);
+		System.out.println(Arrays.toString(next));
 		int i = 0;
 		int j = 0;
 		while (i <= s.length - 1 && j <= t.length - 1) {
+			count++;
 			if (j == -1 || s[i] == t[j]) {
 				i++;
 				j++;
@@ -69,9 +78,38 @@ public class KMPTest {
 				j = next[j];
 			}
 		}
+		System.out.println("count="+count);
 		if (j < t.length) {
 			return -1;
 		} else
 			return i - t.length; // 返回模式串在主串中的头下标
+	}
+	
+	public static int f(char[] s, char[] t){
+		int count=0;
+		int index=-1;
+		boolean flag=false;
+		boolean find=false;
+		for(int i=0;i<=s.length-t.length;i++){
+			if(find){
+				break;
+			}
+			for(int j=0;j<t.length;j++){
+				count=count+1;
+				if(s[i+j]==t[j]){
+					flag=true;
+				}else{
+					break;
+				}
+				if(j==t.length-1&&flag==true){
+					index=i;
+					find=true;
+					break;
+				}
+			}
+		}
+		System.out.println("count="+count);
+		System.out.println("index="+index);
+		return index;
 	}
 }
